@@ -41,7 +41,7 @@ export default function Navbar() {
       }}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between h-20 md:h-20">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2 group">
@@ -55,13 +55,13 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center justify-center gap-1 flex-1">
             {navLinks.map((link) => {
               const isActive = location === link.href;
               return (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className="px-3 py-2 rounded-md text-sm font-medium transition-all duration-200"
+                    className="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 whitespace-nowrap"
                     style={{
                       fontFamily: "Montserrat, sans-serif",
                       color: isActive ? "oklch(0.68 0.15 35)" : "oklch(0.85 0.01 255)",
@@ -88,7 +88,7 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center justify-end gap-3">
             <Link href="/contact">
               <span
                 className="text-sm px-4 py-2 rounded-md font-semibold border-2 transition-all duration-200 inline-flex items-center"
