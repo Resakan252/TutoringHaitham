@@ -1,22 +1,21 @@
 /**
- * HTM Tutors — Services Page
- * Design: "Structured Clarity" — Swiss Typographic Style
+ * HTM Tutors — Services Page (Revised)
+ * Focus: High school & university tutoring, specialized in quantitative subjects
  */
 import { Link } from "wouter";
 import { motion, type Transition } from "framer-motion";
 import {
   BookOpen,
   Calculator,
-  TrendingUp,
+  BarChart3,
   Monitor,
-  Users,
+  Award,
+  Clock,
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const MATH_ABSTRACT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663439036136/diD4MzSp8iBWmaoJbmEFjk/math-abstract-dJ2J5yqoKo7cdPS8iF9RQv.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -31,107 +30,138 @@ const services = [
   {
     id: "highschool",
     icon: BookOpen,
-    title: "High School Math Tutoring",
-    tagline: "Building strong foundations for academic success",
-    desc: "Our high school tutoring program focuses on building a strong conceptual understanding and developing problem-solving skills that will serve students throughout their academic careers.",
+    title: "High School Mathematics (Grades 9-12)",
+    tagline: "Building strong foundations for university success",
+    desc: "Comprehensive tutoring for Ontario high school mathematics. Whether you're aiming for 80%+ or preparing for university, I focus on deep conceptual understanding and exam readiness.",
     topics: [
-      "Functions",
-      "Advanced Functions",
+      "Functions & Advanced Functions",
       "Calculus & Vectors",
-      "Data Management",
-      "Grade 9–12 Mathematics",
+      "Data Management & Statistics",
+      "Grade 9-10 Mathematics",
+      "Provincial exam prep",
     ],
     highlights: [
-      "Curriculum-aligned sessions for Ontario high school courses",
-      "Focus on conceptual understanding, not just memorization",
-      "Exam preparation and test-taking strategies",
-      "Homework help and assignment support",
+      "Curriculum-aligned with Ontario standards",
+      "Focus on conceptual understanding, not memorization",
+      "Exam preparation with real past papers",
+      "Strategic problem-solving approaches",
     ],
-    color: "oklch(0.68 0.15 35)",
   },
   {
     id: "university",
     icon: Calculator,
-    title: "University Math & Statistics Tutoring",
-    tagline: "Breaking down complex concepts into clear, understandable steps",
-    desc: "University-level mathematics can be challenging. Our experienced tutors help students navigate complex material by breaking it down into manageable, clearly explained steps.",
+    title: "University Quantitative Courses",
+    tagline: "Proven track record: 80%+ in challenging courses",
+    desc: "University-level mathematics and statistics require a different approach. Drawing on my experience as a former TA, I break down complex concepts and help you master challenging material.",
     topics: [
-      "Calculus I & II",
+      "Calculus I, II, III",
       "Linear Algebra",
       "Statistics & Probability",
-      "Quantitative Methods",
       "Differential Equations",
+      "Quantitative Methods",
     ],
     highlights: [
-      "Support for first and second-year university courses",
+      "First and second-year university support",
       "Step-by-step problem solving methodology",
       "Midterm and final exam preparation",
       "Concept clarification and review sessions",
     ],
-    color: "oklch(0.68 0.15 35)",
   },
   {
     id: "finance",
-    icon: TrendingUp,
-    title: "Finance & Accounting Tutoring",
-    tagline: "Quantitative support for business students",
-    desc: "Business students often face challenging quantitative courses. Our finance and accounting tutoring helps students understand the mathematical foundations of their business programs.",
+    icon: BarChart3,
+    title: "Business & Finance Mathematics",
+    tagline: "Quantitative support for commerce and MBA students",
+    desc: "Business students face challenging quantitative courses. I help you understand the mathematical foundations and apply them to real-world scenarios.",
     topics: [
       "Corporate Finance",
       "Business Statistics",
       "Quantitative Finance",
-      "Financial Accounting",
+      "Financial Analysis",
       "Managerial Accounting",
     ],
     highlights: [
       "Tailored for business school students",
-      "Real-world application of financial concepts",
-      "Support for case studies and assignments",
-      "CFA and professional exam preparation",
+      "Real-world application of concepts",
+      "Support for case studies and projects",
+      "Professional exam preparation",
     ],
-    color: "oklch(0.68 0.15 35)",
+  },
+  {
+    id: "exam",
+    icon: Award,
+    title: "Exam Preparation & Test Strategy",
+    tagline: "Strategic approach to maximize performance",
+    desc: "Exams are about more than just knowing the material. I help you develop test-taking strategies, manage time effectively, and perform under pressure.",
+    topics: [
+      "Provincial high school exams",
+      "University midterms & finals",
+      "Standardized test prep",
+      "Time management strategies",
+      "Problem-solving under pressure",
+    ],
+    highlights: [
+      "Practice with real exam questions",
+      "Strategic time allocation techniques",
+      "Stress management and confidence building",
+      "Post-exam review and improvement planning",
+    ],
   },
   {
     id: "online",
     icon: Monitor,
     title: "Online Tutoring",
     tagline: "Flexible, interactive learning from anywhere",
-    desc: "Our online tutoring sessions are designed to be just as effective as in-person sessions. Using interactive tools, we ensure students can see, understand, and practice concepts in real time.",
+    desc: "Online sessions are just as effective as in-person. Using interactive tools and screen sharing, we work through problems together in real time.",
     topics: [
       "All subjects available online",
-      "Interactive whiteboard sessions",
-      "Screen sharing for problem solving",
-      "Recorded sessions available",
       "Flexible scheduling",
+      "Interactive problem solving",
+      "Screen sharing & whiteboard",
     ],
     highlights: [
-      "Learn from anywhere — home, library, or campus",
-      "Interactive digital whiteboard for live problem solving",
-      "Flexible scheduling to fit your timetable",
-      "Same quality as in-person sessions",
+      "Convenient scheduling around your life",
+      "Interactive tools for visual learning",
+      "Session recordings available",
+      "Personalized practice materials",
     ],
-    color: "oklch(0.68 0.15 35)",
   },
   {
     id: "inperson",
-    icon: Users,
-    title: "In-Person Tutoring",
-    tagline: "Focused, face-to-face learning environment",
-    desc: "For students who prefer direct, face-to-face interaction, our in-person tutoring sessions provide a focused environment with hands-on, personalized support.",
+    icon: Clock,
+    title: "In-Person Tutoring (Toronto)",
+    tagline: "Face-to-face sessions with focused, personalized support",
+    desc: "In-person tutoring provides a dedicated learning environment. We work through problems together, with immediate feedback and personalized guidance.",
     topics: [
       "All subjects available in-person",
-      "Toronto and GTA locations",
-      "Flexible meeting locations",
-      "One-on-one sessions",
-      "Small group sessions available",
+      "Flexible locations in Toronto",
+      "One-on-one focused sessions",
+      "Customized pace and approach",
     ],
     highlights: [
-      "Direct, hands-on support from your tutor",
-      "Focused learning environment without distractions",
+      "Dedicated learning environment",
       "Immediate feedback and clarification",
-      "Available in Toronto and the GTA",
+      "Personalized problem sets",
+      "Flexible session length and frequency",
     ],
-    color: "oklch(0.68 0.15 35)",
+  },
+];
+
+const process = [
+  {
+    num: "01",
+    title: "Initial Consultation",
+    desc: "We discuss your goals, current challenges, and learning style. I assess your strengths and gaps to create a personalized plan.",
+  },
+  {
+    num: "02",
+    title: "Customized Sessions",
+    desc: "Each session is tailored to your needs. We focus on problem areas, build conceptual understanding, and practice exam-style questions.",
+  },
+  {
+    num: "03",
+    title: "Ongoing Progress",
+    desc: "Regular check-ins on grades and confidence. I adjust the approach as needed to ensure continuous improvement.",
   },
 ];
 
@@ -140,167 +170,246 @@ export default function Services() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* Page Header */}
-      <section
-        className="relative pt-32 pb-16 overflow-hidden"
-        style={{ backgroundColor: "oklch(0.18 0.06 255)" }}
-      >
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: `url(${MATH_ABSTRACT})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        />
-        <div className="container relative z-10">
-          <motion.span
+      {/* ─── PAGE HEADER ─────────────────────────────────────────── */}
+      <section className="py-20 pt-32" style={{ backgroundColor: "oklch(0.99 0.002 90)" }}>
+        <div className="container">
+          <motion.div
             initial="hidden"
             animate="visible"
+            custom={0}
             variants={fadeUp}
-            className="section-label block mb-3"
-            style={{ color: "oklch(0.75 0.12 35)" }}
+            className="text-center max-w-3xl mx-auto"
           >
-            What We Offer
-          </motion.span>
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            variants={fadeUp}
-            className="text-4xl md:text-5xl font-black text-white mb-4"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            Our Tutoring Services
-          </motion.h1>
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            custom={2}
-            variants={fadeUp}
-            className="text-base max-w-2xl"
-            style={{ color: "oklch(0.72 0.02 255)" }}
-          >
-            HTM Tutors provides personalized tutoring for students at the high school and university level, specializing in mathematics and quantitative subjects.
-          </motion.p>
+            <span className="section-label block mb-4" style={{ color: "oklch(0.75 0.12 35)" }}>
+              Specialized Services
+            </span>
+            <h1
+              className="text-5xl md:text-6xl font-black mb-6"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
+            >
+              Tutoring Services
+            </h1>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              custom={1}
+              variants={fadeUp}
+              className="text-lg leading-relaxed"
+              style={{ color: "oklch(0.45 0.03 255)" }}
+            >
+              Personalized tutoring for high school and university students. Whether you need help with a specific course or comprehensive exam preparation, I customize each service to your goals.
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Services List */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.99 0.002 90)" }}>
+      {/* ─── SERVICES GRID ────────────────────────────────────────── */}
+      <section className="py-20" style={{ backgroundColor: "oklch(0.18 0.06 255)" }}>
         <div className="container">
-          <div className="flex flex-col gap-12">
-            {services.map((svc, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((svc, i) => {
+              const Icon = svc.icon;
+              return (
+                <motion.div
+                  key={svc.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i}
+                  variants={fadeUp}
+                  className="p-8 rounded-lg"
+                  style={{
+                    backgroundColor: "oklch(0.21 0.006 285.885)",
+                    borderLeft: "4px solid oklch(0.75 0.12 35)",
+                  }}
+                >
+                  <Icon
+                    size={32}
+                    style={{ color: "oklch(0.75 0.12 35)", marginBottom: "1rem" }}
+                  />
+                  <h3
+                    className="text-xl font-bold mb-2"
+                    style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.85 0.005 65)" }}
+                  >
+                    {svc.title}
+                  </h3>
+                  <p
+                    className="text-sm font-medium mb-3"
+                    style={{ color: "oklch(0.75 0.12 35)" }}
+                  >
+                    {svc.tagline}
+                  </p>
+                  <p style={{ color: "oklch(0.72 0.02 255)" }} className="text-sm leading-relaxed mb-4">
+                    {svc.desc}
+                  </p>
+
+                  <div className="mb-4">
+                    <p style={{ color: "oklch(0.65 0.02 255)" }} className="text-xs font-bold mb-2">
+                      TOPICS COVERED:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {svc.topics.map((topic) => (
+                        <span
+                          key={topic}
+                          className="text-xs px-2 py-1 rounded"
+                          style={{
+                            backgroundColor: "oklch(0.75 0.12 35 / 0.15)",
+                            color: "oklch(0.75 0.12 35)",
+                          }}
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <p style={{ color: "oklch(0.65 0.02 255)" }} className="text-xs font-bold mb-2">
+                      HIGHLIGHTS:
+                    </p>
+                    <ul className="space-y-1">
+                      {svc.highlights.map((highlight) => (
+                        <li key={highlight} className="flex items-start gap-2 text-xs" style={{ color: "oklch(0.72 0.02 255)" }}>
+                          <CheckCircle2 size={14} style={{ color: "oklch(0.75 0.12 35)", marginTop: "2px", flexShrink: 0 }} />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── HOW IT WORKS ─────────────────────────────────────────── */}
+      <section className="py-20" style={{ backgroundColor: "oklch(0.99 0.002 90)" }}>
+        <div className="container">
+          <div className="text-center mb-14">
+            <motion.span
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="section-label block mb-3"
+            >
+              My Process
+            </motion.span>
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={1}
+              variants={fadeUp}
+              className="text-3xl md:text-4xl font-black"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
+            >
+              How Tutoring Works
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            {process.map((step, i) => (
               <motion.div
-                key={svc.id}
-                id={svc.id}
+                key={step.num}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                custom={0}
+                custom={i}
                 variants={fadeUp}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-start rounded-2xl p-8 border ${
-                  i % 2 === 0 ? "" : ""
-                }`}
-                style={{
-                  backgroundColor: "white",
-                  borderColor: "oklch(0.90 0.006 255)",
-                  boxShadow: "0 2px 20px oklch(0.18 0.06 255 / 0.06)",
-                }}
               >
-                {/* Left: Info */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${svc.color.replace(")", " / 0.1)")}` }}
-                    >
-                      <svc.icon size={24} style={{ color: svc.color }} />
-                    </div>
-                    <div>
-                      <h2
-                        className="font-black text-xl"
-                        style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
-                      >
-                        {svc.title}
-                      </h2>
-                      <p className="text-xs font-medium" style={{ color: svc.color, fontFamily: "Montserrat, sans-serif" }}>
-                        {svc.tagline}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: "oklch(0.40 0.03 255)" }}>
-                    {svc.desc}
-                  </p>
-                  <ul className="flex flex-col gap-2 mb-6">
-                    {svc.highlights.map((h) => (
-                      <li key={h} className="flex items-start gap-2 text-sm" style={{ color: "oklch(0.35 0.04 255)" }}>
-                        <CheckCircle2 size={16} className="mt-0.5 shrink-0" style={{ color: svc.color }} />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/contact">
-                    <span
-                      className="inline-flex items-center gap-2 text-sm font-semibold"
-                      style={{ color: svc.color, fontFamily: "Montserrat, sans-serif" }}
-                    >
-                      Book a Session <ArrowRight size={15} />
-                    </span>
-                  </Link>
-                </div>
-
-                {/* Right: Topics */}
                 <div
-                  className="rounded-xl p-6"
-                  style={{ backgroundColor: "oklch(0.97 0.004 255)" }}
+                  className="text-5xl font-black mb-4"
+                  style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.75 0.12 35)" }}
                 >
-                  <h3
-                    className="font-bold text-sm mb-4 uppercase tracking-wide"
-                    style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.35 0.05 255)" }}
-                  >
-                    Topics Covered
-                  </h3>
-                  <ul className="flex flex-col gap-3">
-                    {svc.topics.map((topic) => (
-                      <li
-                        key={topic}
-                        className="flex items-center gap-3 text-sm py-2 border-b last:border-0"
-                        style={{ borderColor: "oklch(0.90 0.006 255)", color: "oklch(0.25 0.04 255)" }}
-                      >
-                        <div
-                          className="w-2 h-2 rounded-full shrink-0"
-                          style={{ backgroundColor: svc.color }}
-                        />
-                        {topic}
-                      </li>
-                    ))}
-                  </ul>
+                  {step.num}
                 </div>
+                <h3
+                  className="text-lg font-bold mb-2"
+                  style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
+                >
+                  {step.title}
+                </h3>
+                <p style={{ color: "oklch(0.45 0.03 255)" }} className="text-sm leading-relaxed">
+                  {step.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ─── PRICING NOTE ─────────────────────────────────────────── */}
       <section className="py-16" style={{ backgroundColor: "oklch(0.18 0.06 255)" }}>
         <div className="container text-center">
-          <h2
-            className="text-3xl md:text-4xl font-black text-white mb-4"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-2xl font-bold mb-4"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.85 0.005 65)" }}
+          >
+            Flexible Pricing & Scheduling
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={1}
+            variants={fadeUp}
+            className="text-base max-w-2xl mx-auto"
+            style={{ color: "oklch(0.72 0.02 255)" }}
+          >
+            Pricing varies based on the type of service, frequency, and duration. Contact me to discuss your specific needs and get a customized quote. I offer flexible scheduling to fit your academic calendar and commitments.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ─── CTA ──────────────────────────────────────────────────── */}
+      <section className="py-20" style={{ backgroundColor: "oklch(0.99 0.002 90)" }}>
+        <div className="container text-center">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-3xl md:text-4xl font-black mb-6"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
           >
             Ready to Get Started?
-          </h2>
-          <p className="text-base mb-8" style={{ color: "oklch(0.72 0.02 255)" }}>
-            Contact us today to find the right tutoring service for your needs.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={1}
+            variants={fadeUp}
+            className="text-lg mb-8 max-w-xl mx-auto"
+            style={{ color: "oklch(0.45 0.03 255)" }}
+          >
+            Book a consultation to discuss your goals and find the right tutoring service for you.
+          </motion.p>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
+            variants={fadeUp}
+            className="flex flex-wrap justify-center gap-4"
+          >
             <Link href="/contact">
               <span className="btn-primary text-base px-8 py-4 flex items-center gap-2">
                 Book a Session <ArrowRight size={18} />
               </span>
             </Link>
             <Link href="/contact">
-              <span className="btn-outline text-base px-8 py-4">Contact Us</span>
+              <span className="btn-outline text-base px-8 py-4" style={{ color: "oklch(0.85 0.005 65)" }}>
+                Get in Touch
+              </span>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 

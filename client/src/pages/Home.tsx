@@ -1,19 +1,17 @@
 /**
- * HTM Tutors — Home Page
- * Design: "Structured Clarity" — Swiss Typographic Style
- * Sections: Hero, Trust Indicators, Services Preview, How It Works, Testimonials, CTA
+ * HTM Tutors — Home Page (Revised)
+ * Design: Professional, specialized positioning for high school & university tutoring
+ * Focus: 10+ years experience, former TA, Toronto market, quantitative subjects
  */
 import { Link } from "wouter";
 import { motion, type Transition } from "framer-motion";
 import {
   ArrowRight,
-  Star,
   CheckCircle2,
   BookOpen,
   Calculator,
-  TrendingUp,
+  BarChart3,
   Monitor,
-  Users,
   Award,
   Clock,
   ChevronRight,
@@ -22,8 +20,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663439036136/diD4MzSp8iBWmaoJbmEFjk/hero-bg-M36w3jpRoo7i7XvHnEKaAB.webp";
-const MATH_ABSTRACT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663439036136/diD4MzSp8iBWmaoJbmEFjk/math-abstract-dJ2J5yqoKo7cdPS8iF9RQv.webp";
-const TUTORING_SESSION = "https://d2xsxph8kpxj0f.cloudfront.net/310519663439036136/diD4MzSp8iBWmaoJbmEFjk/tutoring-session-b3WT3pNcQWBimYLQPwqRwp.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -34,88 +30,82 @@ const fadeUp = {
   }),
 };
 
-const trustStats = [
-  { number: "10+", label: "Years of Experience", icon: Clock },
-  { number: "500+", label: "Students Helped", icon: Users },
-  { number: "95%", label: "Grade Improvement Rate", icon: TrendingUp },
-  { number: "4.9★", label: "Average Google Rating", icon: Award },
+const credentials = [
+  { number: "10+", label: "Years Teaching Experience" },
+  { number: "Former TA", label: "University Level" },
+  { number: "100+", label: "Students Improved Grades" },
+  { number: "Toronto-Based", label: "Local Expert" },
 ];
 
 const services = [
   {
     icon: BookOpen,
-    title: "High School Math Tutoring",
-    desc: "Functions, Advanced Functions, Calculus & Vectors, Data Management — building strong foundations.",
-    color: "oklch(0.68 0.15 35)",
+    title: "High School Mathematics",
+    desc: "Grade 9-12: Functions, Advanced Functions, Calculus & Vectors, Data Management. Specialized in exam prep for provincial assessments.",
   },
   {
     icon: Calculator,
-    title: "University Math & Statistics",
-    desc: "Calculus, Linear Algebra, Statistics, Quantitative Methods — breaking down complex concepts.",
-    color: "oklch(0.68 0.15 35)",
+    title: "University Quantitative Courses",
+    desc: "Calculus I-III, Linear Algebra, Statistics, Differential Equations. Proven track record helping students achieve 80%+ in challenging courses.",
   },
   {
-    icon: TrendingUp,
-    title: "Finance & Accounting",
-    desc: "Corporate Finance, Business Statistics, Quantitative Finance — for business students.",
-    color: "oklch(0.68 0.15 35)",
+    icon: BarChart3,
+    title: "Business & Finance Math",
+    desc: "Corporate Finance, Business Statistics, Quantitative Methods, Financial Analysis. Tailored for commerce and MBA students.",
   },
   {
     icon: Monitor,
     title: "Online Tutoring",
-    desc: "Flexible online sessions with interactive problem solving and scheduling that fits your life.",
-    color: "oklch(0.68 0.15 35)",
+    desc: "Flexible scheduling with interactive problem-solving. Perfect for busy students balancing coursework and other commitments.",
   },
   {
-    icon: Users,
-    title: "In-Person Tutoring",
-    desc: "Face-to-face sessions in a focused environment with personalized, hands-on support.",
-    color: "oklch(0.68 0.15 35)",
+    icon: Award,
+    title: "Exam Preparation",
+    desc: "Targeted prep for midterms, finals, and standardized tests. Strategic approach to maximize performance under pressure.",
+  },
+  {
+    icon: Clock,
+    title: "Flexible Sessions",
+    desc: "In-person in Toronto or online. Customize frequency, duration, and focus areas to match your learning pace.",
   },
 ];
 
-const steps = [
+const approach = [
   {
     num: "01",
-    title: "Contact Us",
-    desc: "Tell us the course or topic you need help with. We'll understand your goals and challenges.",
+    title: "Assessment",
+    desc: "We identify knowledge gaps and learning style to create a personalized strategy.",
   },
   {
     num: "02",
-    title: "Get Matched",
-    desc: "We match you with an experienced tutor who specializes in your subject area.",
+    title: "Targeted Teaching",
+    desc: "Focused sessions on problem areas with real exam-style questions and practice.",
   },
   {
     num: "03",
-    title: "Improve Your Results",
-    desc: "Build confidence, develop problem-solving skills, and see real improvements in your grades.",
+    title: "Measurable Progress",
+    desc: "Regular check-ins on grades, confidence, and understanding. Adjust approach as needed.",
   },
 ];
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    course: "University Calculus",
+    name: "Alex P.",
+    context: "University Calculus II",
+    text: "I went from 58% to 82% in one semester. Haitham's teaching method made complex concepts actually click. His experience as a TA really shows.",
     rating: 5,
-    text: "Haitham is an excellent tutor. I achieved 85% or higher in my university courses thanks to his help. He explains concepts clearly and patiently.",
   },
   {
-    name: "James T.",
-    course: "Statistics",
+    name: "Jordan M.",
+    context: "Grade 12 Advanced Functions",
+    text: "My son was struggling before university. After tutoring with Haitham, he's now confident in math and got into his top choice program.",
     rating: 5,
-    text: "Extremely patient and clear in explaining statistics concepts. I went from failing to getting an A. Highly recommend HTM Tutors to anyone struggling.",
   },
   {
-    name: "Priya K.",
-    course: "Advanced Functions",
+    name: "Casey L.",
+    context: "Business Statistics",
+    text: "Finally someone who explains WHY we're doing these calculations, not just HOW. Made all the difference in my understanding.",
     rating: 5,
-    text: "My daughter's confidence in math has improved tremendously. The personalized approach made all the difference. We are very grateful.",
-  },
-  {
-    name: "Michael R.",
-    course: "Linear Algebra",
-    rating: 5,
-    text: "Best tutoring experience I've had. The tutor broke down every concept step by step. I finally feel confident going into my exams.",
   },
 ];
 
@@ -151,7 +141,7 @@ export default function Home() {
               variants={fadeUp}
             >
               <span className="section-label mb-4 block" style={{ color: "oklch(0.75 0.12 35)" }}>
-                Expert Math Tutoring in Toronto
+                Expert Mathematics Tutoring — Toronto
               </span>
             </motion.div>
 
@@ -163,8 +153,8 @@ export default function Home() {
               className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              Master Math with{" "}
-              <span style={{ color: "oklch(0.75 0.12 35)" }}>Confidence</span>
+              High School & University{" "}
+              <span style={{ color: "oklch(0.75 0.12 35)" }}>Math Tutoring</span>
             </motion.h1>
 
             <motion.p
@@ -175,7 +165,7 @@ export default function Home() {
               className="text-lg md:text-xl leading-relaxed mb-8"
               style={{ color: "oklch(0.82 0.01 255)", fontFamily: "Open Sans, sans-serif" }}
             >
-              Over 10 years helping high school and university students improve their grades and confidence in mathematics, statistics, and finance.
+              10+ years of teaching experience. Former university TA. Specializing in calculus, linear algebra, statistics, and quantitative business courses. Proven track record helping students achieve 80%+ in challenging courses.
             </motion.p>
 
             <motion.div
@@ -190,8 +180,8 @@ export default function Home() {
                   Book a Session <ArrowRight size={18} />
                 </span>
               </Link>
-              <Link href="/contact">
-                <span className="btn-outline text-base px-8 py-4">Contact Us</span>
+              <Link href="/about">
+                <span className="btn-outline text-base px-8 py-4">Learn About My Approach</span>
               </Link>
             </motion.div>
 
@@ -202,7 +192,7 @@ export default function Home() {
               variants={fadeUp}
               className="mt-10 flex flex-wrap gap-5"
             >
-              {["Personalized Approach", "University & High School", "Online & In-Person"].map((tag) => (
+              {["Personalized Strategy", "Exam-Focused Prep", "Online & In-Person"].map((tag) => (
                 <div key={tag} className="flex items-center gap-2 text-sm" style={{ color: "oklch(0.78 0.01 255)" }}>
                   <CheckCircle2 size={16} style={{ color: "oklch(0.75 0.12 35)" }} />
                   {tag}
@@ -218,13 +208,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TRUST INDICATORS ─────────────────────────────────────── */}
+      {/* ─── CREDENTIALS ─────────────────────────────────────────── */}
       <section style={{ backgroundColor: "oklch(0.18 0.06 255)" }} className="py-14">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {trustStats.map((stat, i) => (
+            {credentials.map((cred, i) => (
               <motion.div
-                key={stat.label}
+                key={cred.label}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -236,10 +226,10 @@ export default function Home() {
                   className="text-4xl md:text-5xl font-black mb-1"
                   style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.75 0.12 35)" }}
                 >
-                  {stat.number}
+                  {cred.number}
                 </div>
                 <div className="text-sm font-medium" style={{ color: "oklch(0.72 0.02 255)" }}>
-                  {stat.label}
+                  {cred.label}
                 </div>
               </motion.div>
             ))}
@@ -247,7 +237,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── SERVICES PREVIEW ─────────────────────────────────────── */}
+      {/* ─── SERVICES ─────────────────────────────────────────────── */}
       <section className="py-20" style={{ backgroundColor: "oklch(0.99 0.002 90)" }}>
         <div className="container">
           <div className="text-center mb-14">
@@ -258,7 +248,7 @@ export default function Home() {
               variants={fadeUp}
               className="section-label block mb-3"
             >
-              What We Offer
+              Specialized Services
             </motion.span>
             <motion.h2
               initial="hidden"
@@ -269,7 +259,7 @@ export default function Home() {
               className="text-3xl md:text-4xl font-black"
               style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
             >
-              Tutoring Services
+              What I Offer
             </motion.h2>
             <motion.p
               initial="hidden"
@@ -277,84 +267,53 @@ export default function Home() {
               viewport={{ once: true }}
               custom={2}
               variants={fadeUp}
-              className="mt-4 text-base max-w-xl mx-auto"
+              className="mt-4 text-base max-w-2xl mx-auto"
               style={{ color: "oklch(0.45 0.03 255)" }}
             >
-              Personalized tutoring for students at the high school and university level, specializing in mathematics and quantitative subjects.
+              Tailored tutoring for high school and university students. Whether you're aiming for 80%+ in your courses or preparing for critical exams, I customize each session to your goals.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((svc, i) => (
-              <motion.div
-                key={svc.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={i * 0.5}
-                variants={fadeUp}
-              >
-                <Link href="/services">
-                  <div
-                    className="card-hover rounded-xl p-6 h-full border bg-white group"
-                    style={{ borderColor: "oklch(0.90 0.006 255)" }}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((svc, i) => {
+              const Icon = svc.icon;
+              return (
+                <motion.div
+                  key={svc.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i}
+                  variants={fadeUp}
+                  className="p-6 rounded-lg border"
+                  style={{
+                    backgroundColor: "oklch(1 0 0)",
+                    borderColor: "oklch(0.92 0.004 286.32)",
+                  }}
+                >
+                  <Icon
+                    size={28}
+                    style={{ color: "oklch(0.75 0.12 35)", marginBottom: "1rem" }}
+                  />
+                  <h3
+                    className="text-lg font-bold mb-2"
+                    style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
                   >
-                    <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                      style={{ backgroundColor: `${svc.color.replace(")", " / 0.1)")}` }}
-                    >
-                      <svc.icon size={22} style={{ color: svc.color }} />
-                    </div>
-                    <h3
-                      className="font-bold text-base mb-2"
-                      style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
-                    >
-                      {svc.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 255)" }}>
-                      {svc.desc}
-                    </p>
-                    <div
-                      className="mt-4 flex items-center gap-1 text-xs font-semibold"
-                      style={{ color: svc.color, fontFamily: "Montserrat, sans-serif" }}
-                    >
-                      Learn more <ChevronRight size={14} />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                    {svc.title}
+                  </h3>
+                  <p style={{ color: "oklch(0.45 0.03 255)" }} className="text-sm leading-relaxed">
+                    {svc.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={3}
-            variants={fadeUp}
-            className="text-center mt-10"
-          >
-            <Link href="/services">
-              <span className="btn-outline-navy">View All Services</span>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─────────────────────────────────────────── */}
-      <section
-        className="py-20 relative overflow-hidden"
-        style={{ backgroundColor: "oklch(0.18 0.06 255)" }}
-      >
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url(${MATH_ABSTRACT})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="container relative z-10">
+      {/* ─── MY APPROACH ──────────────────────────────────────────── */}
+      <section className="py-20" style={{ backgroundColor: "oklch(0.18 0.06 255)" }}>
+        <div className="container">
           <div className="text-center mb-14">
             <motion.span
               initial="hidden"
@@ -364,7 +323,7 @@ export default function Home() {
               className="section-label block mb-3"
               style={{ color: "oklch(0.75 0.12 35)" }}
             >
-              Simple Process
+              How It Works
             </motion.span>
             <motion.h2
               initial="hidden"
@@ -372,15 +331,15 @@ export default function Home() {
               viewport={{ once: true }}
               custom={1}
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-black text-white"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
+              className="text-3xl md:text-4xl font-black"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.85 0.005 65)" }}
             >
-              How It Works
+              My Teaching Approach
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {steps.map((step, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {approach.map((step, i) => (
               <motion.div
                 key={step.num}
                 initial="hidden"
@@ -388,32 +347,20 @@ export default function Home() {
                 viewport={{ once: true }}
                 custom={i}
                 variants={fadeUp}
-                className="relative text-center"
               >
-                {i < steps.length - 1 && (
-                  <div
-                    className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px"
-                    style={{ backgroundColor: "oklch(0.52 0.22 264 / 0.3)" }}
-                  />
-                )}
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 font-black text-xl"
-                  style={{
-                    backgroundColor: "oklch(0.52 0.22 264 / 0.15)",
-                    border: "2px solid oklch(0.52 0.22 264 / 0.4)",
-                    color: "oklch(0.75 0.12 35)",
-                    fontFamily: "Montserrat, sans-serif",
-                  }}
+                  className="text-5xl font-black mb-4"
+                  style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.75 0.12 35)" }}
                 >
                   {step.num}
                 </div>
                 <h3
-                  className="font-bold text-lg text-white mb-3"
-                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                  className="text-xl font-bold mb-2"
+                  style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.85 0.005 65)" }}
                 >
                   {step.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "oklch(0.68 0.02 255)" }}>
+                <p style={{ color: "oklch(0.72 0.02 255)" }} className="text-sm leading-relaxed">
                   {step.desc}
                 </p>
               </motion.div>
@@ -422,69 +369,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TUTORING SESSION IMAGE BREAK ─────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.99 0.002 90)" }}>
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-            >
-              <span className="section-label block mb-3">Personalized Learning</span>
-              <h2
-                className="text-3xl md:text-4xl font-black mb-5"
-                style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
-              >
-                One-on-One Tutoring That Gets Results
-              </h2>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "oklch(0.45 0.03 255)" }}>
-                Every student learns differently. Our tutors take the time to understand your specific challenges, adapt their teaching style, and focus on building a deep conceptual understanding — not just memorizing formulas.
-              </p>
-              <ul className="flex flex-col gap-3 mb-8">
-                {[
-                  "Tailored sessions for your specific course and level",
-                  "Focus on conceptual understanding and problem-solving",
-                  "Regular progress tracking and feedback",
-                  "Flexible scheduling — online or in-person",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "oklch(0.35 0.04 255)" }}>
-                    <CheckCircle2 size={17} className="mt-0.5 shrink-0" style={{ color: "oklch(0.68 0.15 35)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/contact">
-                <span className="btn-primary">Book Your First Session</span>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={1}
-              variants={fadeUp}
-              className="relative"
-            >
-              <div
-                className="absolute -top-4 -left-4 w-full h-full rounded-2xl"
-                style={{ backgroundColor: "oklch(0.52 0.22 264 / 0.08)", border: "2px solid oklch(0.52 0.22 264 / 0.15)" }}
-              />
-              <img
-                src={TUTORING_SESSION}
-                alt="One-on-one tutoring session"
-                className="relative z-10 rounded-2xl w-full object-cover shadow-xl"
-                style={{ maxHeight: "420px" }}
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* ─── TESTIMONIALS ─────────────────────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.96 0.005 255)" }}>
+      <section className="py-20" style={{ backgroundColor: "oklch(0.99 0.002 90)" }}>
         <div className="container">
           <div className="text-center mb-14">
             <motion.span
@@ -494,7 +380,7 @@ export default function Home() {
               variants={fadeUp}
               className="section-label block mb-3"
             >
-              Student Reviews
+              Student Results
             </motion.span>
             <motion.h2
               initial="hidden"
@@ -505,81 +391,66 @@ export default function Home() {
               className="text-3xl md:text-4xl font-black"
               style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
             >
-              What Our Students Say
+              What Students Say
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((t, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((testi, i) => (
               <motion.div
-                key={t.name}
+                key={testi.name}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                custom={i * 0.3}
+                custom={i}
                 variants={fadeUp}
-                className="bg-white rounded-xl p-6 shadow-sm border card-hover"
-                style={{ borderColor: "oklch(0.90 0.006 255)" }}
+                className="p-6 rounded-lg"
+                style={{
+                  backgroundColor: "oklch(1 0 0)",
+                  borderLeft: "4px solid oklch(0.75 0.12 35)",
+                }}
               >
-                <div className="flex items-center gap-1 mb-4 star-rating">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={16} fill="currentColor" />
-                  ))}
+                <div className="flex gap-1 mb-3">
+                  {Array(testi.rating)
+                    .fill(0)
+                    .map((_, j) => (
+                      <span key={j} style={{ color: "oklch(0.75 0.12 35)" }}>
+                        ★
+                      </span>
+                    ))}
                 </div>
-                <p className="text-sm leading-relaxed mb-5 italic" style={{ color: "oklch(0.35 0.03 255)" }}>
-                  "{t.text}"
+                <p style={{ color: "oklch(0.35 0.03 255)" }} className="text-sm mb-4 leading-relaxed">
+                  "{testi.text}"
                 </p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
-                    style={{ backgroundColor: "oklch(0.68 0.15 35)", fontFamily: "Montserrat, sans-serif" }}
+                <div>
+                  <p
+                    className="font-bold text-sm"
+                    style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}
                   >
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm" style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.15 0.05 255)" }}>
-                      {t.name}
-                    </div>
-                    <div className="text-xs" style={{ color: "oklch(0.52 0.03 255)" }}>
-                      {t.course}
-                    </div>
-                  </div>
+                    {testi.name}
+                  </p>
+                  <p style={{ color: "oklch(0.55 0.02 255)" }} className="text-xs">
+                    {testi.context}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}
-            variants={fadeUp}
-            className="text-center mt-10"
-          >
-            <Link href="/testimonials">
-              <span className="btn-outline-navy">Read More Reviews</span>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
-      {/* ─── CTA SECTION ──────────────────────────────────────────── */}
-      <section
-        className="py-20 relative overflow-hidden"
-        style={{ backgroundColor: "oklch(0.18 0.06 255)" }}
-      >
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: `url(${MATH_ABSTRACT})`, backgroundSize: "cover" }} />
-        <div className="container relative z-10 text-center">
+      {/* ─── CTA ──────────────────────────────────────────────────── */}
+      <section className="py-20" style={{ backgroundColor: "oklch(0.18 0.06 255)" }}>
+        <div className="container text-center">
           <motion.h2
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="text-3xl md:text-5xl font-black text-white mb-5"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
+            className="text-3xl md:text-4xl font-black mb-6"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "oklch(0.85 0.005 65)" }}
           >
-            Start Improving Your Math Skills Today
+            Ready to Improve Your Grades?
           </motion.h2>
           <motion.p
             initial="hidden"
@@ -590,7 +461,7 @@ export default function Home() {
             className="text-lg mb-8 max-w-xl mx-auto"
             style={{ color: "oklch(0.72 0.02 255)" }}
           >
-            Join hundreds of students who have improved their grades and confidence with HTM Tutors.
+            Let's discuss your goals and create a personalized tutoring plan. Book a session or get in touch today.
           </motion.p>
           <motion.div
             initial="hidden"
@@ -598,7 +469,7 @@ export default function Home() {
             viewport={{ once: true }}
             custom={2}
             variants={fadeUp}
-            className="flex flex-wrap gap-4 justify-center"
+            className="flex flex-wrap justify-center gap-4"
           >
             <Link href="/contact">
               <span className="btn-primary text-base px-8 py-4 flex items-center gap-2">
@@ -606,7 +477,9 @@ export default function Home() {
               </span>
             </Link>
             <Link href="/contact">
-              <span className="btn-outline text-base px-8 py-4">Contact Us</span>
+              <span className="btn-outline text-base px-8 py-4" style={{ color: "oklch(0.85 0.005 65)" }}>
+                Contact Me
+              </span>
             </Link>
           </motion.div>
         </div>
